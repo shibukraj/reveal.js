@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>New RF Platform Architecture.</title>
+    <meta name="description" content="A guide for modern day developers.">
+    <meta name="author" content="Shibu K. Raj">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/white.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section data-menu-title="architecture">
+                <h3>RF Platform Architecture.</h3>
+                <h5>A guide for modern day technology developers</h4>
+                    <p>
+                        <small>
+                            <a href="www.geodis.com" style="color: #0000CD">CL Application Development Team</a>
+                        </small>
+                    </p>
+            </section>
+
+            <section id="themes" data-menu-title="Themes">
+                <h3>Accessibility</h3>
+                <p>
+                    Select the theme that suit your environment:
+                    <br>
+                    <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/white.css'); return false;" style="color: #0000CD">White (default)</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/solarized.css'); return false;" style="color: #0000CD">Solarized</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/black.css'); return false;" style="color: #0000CD">Black</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/league.css'); return false;" style="color: #0000CD">League</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/sky.css'); return false;" style="color: #0000CD">Sky</a>
+                    </br>
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/beige.css'); return false;" style="color: #0000CD">Beige</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/simple.css'); return false;" style="color: #0000CD">Simple</a>
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/serif.css'); return false;" style="color: #0000CD">Serif</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/blood.css'); return false;" style="color: #0000CD">Blood</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/night.css'); return false;" style="color: #0000CD">Night</a> -
+                    <a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/moon.css'); return false;" style="color: #0000CD">Moon</a>
+                </p>
+            </section>
+
+            <section id="architecture" data-menu-title="Start">
+                <blockquote>
+                    &ldquo;Meaningful architecture is a living, vibrant process of deliberation, design, & decision, not just documentation.&rdquo;
+                    <br> ~ Grady Booch
+                </blockquote>
+
+                <blockquote>
+                    &ldquo;First you listen to the users; then you ignore them.&rdquo;
+                    <br> ~ Ken Arnold
+                </blockquote>
+            </section>
+
+            <section id="platform-architecture" data-menu-title="Platform Architecture">
+                <h4>Platform Architecture</h4>
+                <img width="1024" height="576" data-src="../img/rf/3-teir-model.jpg" alt="Platform Architecture">
+                <aside class="notes">Notes</aside>
+            </section>
+
+            <section id="platform-components" data-menu-title="Platform Components">
+                <h4>Platform Components</h4>
+                <ul>
+                    <li class="fragment fade-right">Data Store a.k.a Data Layer
+                        <ol>
+                            <li class="fragment fade-right">Oracle - ODP.Net</li>
+                            <li class="fragment fade-right">Future - Data Store agnostic. Think Cloud!</li>
+                        </ol>
+                    </li>
+                    <li class="fragment fade-right">Application Logic - a.k.a Business Layer
+                        <ol>
+                            <li class="fragment fade-right">ASP.Net MVC Web API 2.0</li>
+                            <li class="fragment fade-right">Future - .Net Core 2.0 or above. Think Linux!</li>
+                        </ol>
+                    </li>
+                    <li class="fragment fade-right">User Interaction - a.k.a User Interface Layer
+                        <ol>
+                            <li class="fragment fade-right">NodeJS 8.x (Terminal Server & UI)</li>
+                            <li class="fragment fade-right">Future - iOS/Android. Think Mobile!</li>
+                        </ol>
+                    </li>
+                </ul>
+
+
+                <aside class="notes">Ending Notes</aside>
+            </section>
+
+
+            <section id="Platform Design" data-menu-title="Platform Design">
+                <h4>Design Considerations</h4>
+                <ul>
+                    <li class="fragment fade-right">Each tier - designed & architected in isolation.</li>
+                    <li class="fragment fade-right">Distributed over http/https</li>
+                    <li class="fragment fade-right">MVC Pattren - UI</li>
+                    <li class="fragment fade-right">MVC & CQRS (Modified) Pattren - Business</li>
+                    <li class="fragment fade-right">N Tier - Logical & Physical </br>
+                        <ol>
+                            <li class="fragment fade-right">Not a SPA</li>
+                            <li class="fragment fade-right">Not a classic 3 Tier.</li>
+                        </ol>
+                    </li>
+                </ul>
+
+                <aside class="notes">
+                    <ol> Why these Considerations
+                        <li>Well understood and documented.</li>
+                        <li>Proven to be effective; but not fool proof.</li>
+                        <li>Simple & well known protocols for distribution.</li>
+                        <li>Each tier - designed & architected in isolation.
+                            <ol>
+                                <li>Will help to utilize the best of each tier.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </aside>
+            </section>
+
+            <section id="UI-system" data-menu-title="Architecture - UI">
+                <h4>User Interface - Architecture</h4>
+                <img width="1024" height="576" data-src="../img/rf/MVC-Process.png" alt="Platform Architecture">
+                <aside class="notes">Notes</aside>
+            </section>
+            <section id="UI-system-components" data-menu-title="UI - Components">
+                <h4>User Interface - Components</h4>
+                <ul>
+                    <li class="fragment fade-right">Terminal User Interface Rendering.</li>
+                    <li class="fragment fade-right">Telnet Server</li>
+                    <li class="fragment fade-right">A classic server application & not a UI application.</li>
+                    <li class="fragment fade-right">Think - Server Side Rendering.</li>
+                    <li class="fragment fade-right">Implements core MVC design paradigm.</li>
+                </ul>
+                <aside class="notes">
+                    <li>Uses Blessed for Terminal UI</li>
+                    <li>telnet2 lib for creating telnet server.</li>
+                    <li>Can convert to ssh pretty easily.</li>
+                    <li>based heavily on library pre-react</li>
+                </aside>
+            </section>
+
+            <section id="UI-internals" data-menu-title="UI - NodeJS">
+                <h4>Node.Js Internals</h4>
+                <img width="1024" height="576" data-src="../img/rf/nodejs-server.png" alt="Technology - New Platform">
+                <aside class="notes">
+                    <li>Wht node internals matter?</li>
+                    <li>Use of PM2 & daemon process.</li>
+                    <li>Need for forever & auto restart.</li>
+                </aside>
+            </section>
+
+            <section id="UI-tools" data-menu-title="UI - Tools">
+                <h4>Node.Js/UI - Tools & Techniques</h4>
+                <!--An image of all the logos?? -->
+                <ul>
+                    <li class="fragment fade-right">PM2 - A life saver
+                        <ol>
+                            <li class="fragment fade-right">Daemon process for the telnet server.</li>
+                            <li class="fragment fade-right">inbuild clustering & load balancing.</li>
+                            <li class="fragment fade-right">Custom metrics & web based monitoring (pm2 web)</li>
+                        </ol>
+                    </li>
+                    <li class="fragment fade-right">Deepstream - A realtime messenger
+                        <ol>
+                            <li class="fragment fade-right">Messaging Server - Utilizes datasync.</li>
+                            <li class="fragment fade-right">Push Notifications? May be!</li>
+                            <li class="fragment fade-right">Peer to Peer & Global communication Models.</li>
+                        </ol>
+                    </li>
+                    <li class="fragment fade-right">Winston - A scavenger
+                        <ol>
+                            <li class="fragment fade-right">UI - Logger. Handled & Unhandled exceptions.</li>
+                        </ol>
+                    </li>
+                    <li class="fragment fade-right">Miniprofiler - Our off-ice official (comming soon!) 
+                        <ol>
+                            <li class="fragment fade-right">Keep track of instrumented code for its performance.</li>
+                            <li class="fragment fade-right">Our microscope into the running code.</li>
+                        </ol>
+                    </li>
+                </ul>
+                <aside class="notes">
+                    <li>Wht node internals matter?</li>
+                    <li>Use of PM2 & daemon process.</li>
+                    <li>Need for forever & auto restart.</li>
+                </aside>
+            </section>
+
+            <section id="end-slide" data-menu-title="The end">
+                <h4>The end</h4>
+                <li class="fragment fade-right">The end This is a test</li>
+                <aside class="notes">Ending Notes</aside>
+            </section>
+
+
+            <section id="end-slide" data-menu-title="The end">
+                <h4>The end</h4>
+                <li class="fragment fade-right">The end This is a test</li>
+                <aside class="notes">Notes</aside>
+            </section>
+        </div>
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.js"></script>
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [{
+                    src: '../lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: '../plugin/markdown/marked.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: '../plugin/markdown/markdown.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: '../plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: '../plugin/zoom-js/zoom.js',
+                    async: true
+                },
+                {
+                    src: '../plugin/notes/notes.js',
+                    async: true
+                }
+            ]
+        });
+    </script>
+    <style>
+        .reveal li {
+            font-size: 0.9em !important;
+            font-family: 'Indie Flower', cursive;
+        }
+
+        .reveal h3 {
+            font-family: 'Architects Daughter', cursive;
+            color: #080808 !important;
+        }
+
+        .reveal h4 {
+            font-family: 'Architects Daughter', cursive;
+            color: #080808 !important;
+        }
+
+        .reveal h5 {
+            font-family: 'Short Stack', cursive !important;
+        }
+        .reveal blockquote {
+            font-family: 'Annie Use Your Telescope', cursive !important;
+            font-size: 0.9em !important;
+            
+        }
+    </style>
+</body>
+
+<!-- 
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Slabo 27px', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Merriweather', serif;
+font-family: 'Lora', serif;
+font-family: 'Indie Flower', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Old Standard TT', serif;
+font-family: 'Heebo', sans-serif;
+font-family: 'Quattrocento', serif;
+font-family: 'Tinos', serif;
+font-family: 'Special Elite', cursive;
+
+
+Display
+
+font-family: 'Patua One', cursive;
+font-family: 'Comfortaa', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Nixie One', cursive;
+font-family: 'Chelsea Market', cursive;
+font-family: 'Happy Monkey', cursive;
+font-family: 'Corben', cursive;
+font-family: 'Atma', cursive;
+
+
+Handwriting
+
+font-family: 'Architects Daughter', cursive;
+font-family: 'Caveat', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Indie Flower', cursive;
+
+font-family: 'Patua One', cursive;
+font-family: 'Comfortaa', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Nixie One', cursive;
+font-family: 'Chelsea Market', cursive;
+font-family: 'Happy Monkey', cursive;
+font-family: 'Corben', cursive;
+font-family: 'Atma', cursive;
+
+
+font-family: 'Architects Daughter', cursive;
+font-family: 'Shadows Into Light Two', cursive;
+font-family: 'Gochi Hand', cursive;
+font-family: 'Neucha', cursive;
+font-family: 'Annie Use Your Telescope', cursive;
+font-family: 'Schoolbell', cursive;
+font-family: 'The Girl Next Door', cursive;
+font-family: 'Walter Turncoat', cursive;
+font-family: 'Crafty Girls', cursive;
+font-family: 'Kalam', cursive;
+font-family: 'Annie Use Your Telescope', cursive;
+font-family: 'Short Stack', cursive;
+font-family: 'Swanky and Moo Moo', cursive;
+
+font-family: 'Handlee', cursive;
+font-family: 'Coming Soon', cursive;
+font-family: 'Just Me Again Down Here', cursive;
+font-family: 'Patua One', cursive;
+font-family: 'Comfortaa', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Nixie One', cursive;
+font-family: 'Chelsea Market', cursive;
+font-family: 'Happy Monkey', cursive;
+font-family: 'Corben', cursive;
+font-family: 'Atma', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Architects Daughter', cursive;
+font-family: 'Shadows Into Light Two', cursive;
+font-family: 'Gochi Hand', cursive;
+font-family: 'Neucha', cursive;
+font-family: 'Itim', cursive;
+font-family: 'Schoolbell', cursive;
+font-family: 'The Girl Next Door', cursive;
+font-family: 'Walter Turncoat', cursive;
+font-family: 'Crafty Girls', cursive;
+-->
+
+</html>

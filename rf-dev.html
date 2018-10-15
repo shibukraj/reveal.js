@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title> Middleware – The New MHE Integration Platform</title>
+		<meta name="description" content="A new and modern platform for real time integration of Synapse WMS with other MHE vendors.">
+		<meta name="author" content="Shibu K. Raj">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-menu-title="Custom Menu Title">
+					<h1>Synapse Middleware</h1>
+					<h3>A new and modern platform for integrating Synapse with MHE/WCS Systems</h3>
+					<p>
+						<small>Created by <a href="www.ohl.com">CL Application Development Team</a> </small>
+					</p>
+				</section>
+
+				<section id="themes">
+					<h2>Accessibility</h2>
+					<p>
+						Select the theme that suit your environment: <br>
+						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized (default)</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a></br>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a>
+					</p>
+				</section>
+
+			<!-- Nested Slides vertically. -->				
+				<section id="fragments-why">
+					<h2>Why a new platform?</h2>
+					<ol>
+						<li class="fragment fade-right">Lower time to market</li>
+						<li class="fragment fade-right">Reliable, Scalable and Resilient</li>
+						<li class="fragment fade-right">Aligns with OHL disaster strategy and principles</li>						
+						<li class="fragment fade-right">Modern/newer - architecture, systems design and programming language</li>
+					</ol>
+				</section>
+
+				<section id="fragments-lttm">
+					<h2>Lower time to market</h2>
+					<ol>
+						<li class="fragment fade-right">Message driven vs customer/implemenation driven</li>
+						<li class="fragment fade-right">Follows configuration over construction</li>
+						<li class="fragment fade-right">Mock host servers. Less dependency with vendors</li>
+						<li class="fragment fade-right">Unit test as code
+							<ul>
+								<li class="fragment fade-right">Repeatable/verifiable for every changes</li>
+								<li class="fragment fade-right">Automated and Immediate feedback</li>
+							</ul>
+						</li>
+					</ol>
+				</section>
+				<section id="fragments-rsr">
+					<h2>Reliable, Scalable and Resilient</h2>
+					<ol>
+						<li class="fragment fade-right">Message Oriented. No database triggers
+							<ul>
+								<li class="fragment fade-right">Drop in new messages!</li>
+								<li class="fragment fade-right">Ability to reconfigure messages</li>
+							</ul>
+						</li>
+						<li class="fragment fade-right">Disaster recovery and improved resilience via load balancers</li>
+					</ol>
+				</section>
+				<section id="fragments-modern">
+					<h2>Architecture</h2>
+					<ol>
+						<li class="fragment fade-right">Cloud centric architecture
+							<ul>
+								<li class="fragment fade-right">Ability to scale using commodity hardware</li>
+								<li class="fragment fade-right">Run in cloud - if needed</li>
+							</ul>
+						</li>
+						<li class="fragment fade-right">Separation of concerns and single responsibility per message</li>
+						<li class="fragment fade-right">Linear chain of command</li>
+					</ol>
+				</section>
+			<section data-background="img/wcs/ConceptualDesign.png" data-background-size="50%">
+						<h4>Conceptual Architecture</h4>
+				</section>
+
+				<section>
+					<h2>Key Concepts</h2>
+					<ol>
+						<li class="fragment fade-right">Message
+						<ul>
+							<li class="fragment fade-right">Source
+								<ul><li class="fragment fade-right">Source Listener</li></ul>
+							</li>
+							<li class="fragment fade-right">Destination
+								<ul><li class="fragment fade-right">Destination Listener</li></ul>
+							</li>
+						</ul>
+						</li>
+						<li class="fragment fade-right">Message Context</li>
+						<li class="fragment fade-right">Message Envelope</li>
+						<li class="fragment fade-right">End Points</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>EndPoints - Explained</h2>
+					<ol>
+						<li>TCP/IP Sockets
+							<ul>
+								<li class="fragment fade-right">Uni Directional</li>
+								<li class="fragment fade-right">Bi Directional (Duplex)</li>
+							</ul>
+						</li>
+						<li class="fragment fade-right">Relational Database Management Systems
+							<ul>
+								<li class="fragment fade-right">Oracle</li>
+								<li class="fragment fade-right">SQL Server</li>
+							</ul>
+						</li>
+						<li class="fragment fade-right">Message Queues
+							<ul>
+								<li class="fragment fade-right">RabbitMQ</li>
+							</ul>
+						</li>
+						<li class="fragment fade-right">File Transfer
+							<ul>
+								<li class="fragment fade-right">FTP</li>
+								<li class="fragment fade-right">Secure FTP</li>
+							</ul>
+						</li>
+						<li class="fragment fade-right">File Share
+						</li>
+
+					</ol>
+				</section>
+
+				<!-- Configuration Overview.-->
+				<section>
+					<h4>Configuration</h4>
+					<pre><code class="xml" class="hljs"  data-trim contenteditable style="font-size: 10px;" >
+<WCSServiceContext name="ExactaTCPIPServiceContext" customerId="18039" facility="YTD" isActive="false">
+  <!--Setup all end points here-->
+  <EndPoints>
+    <EndPoint name="RabbitMQ" handler="SynapseMiddleware.Core.Framework.EndPointHandler.RabbitMqHandler,Framework" >
+    </EndPoint>
+    <EndPoint name="SortMessageDestinationEndPoint" handler="SynapseMiddleware.Core.Framework.EndPointHandler.DuplexTcpHandler,Framework">
+      <EndpointType>SynapseMiddleware.Core.Configuration.WcsServiceContexts.EndPoints.TcpEndPoint,Configuration</EndpointType>
+    </EndPoint>
+  </EndPoints>
+  <!-- Setup Message formats here-->
+  <MessageEnvelopes>
+    <MessageEnvelope name="SortMessageSourceEnvelope">
+      <MessageType>SynapseMiddleware.Core.Contract.Exacta.IExactaSortMessage,Contract</MessageType>
+    </MessageEnvelope>
+    <MessageEnvelope name="SortMessageDestinationEnvelope">
+      <MessageType>SynapseMiddleware.WCS.WCSMessages.Exacta.SortMessage,WCSMessages</MessageType>
+      <Formatter>SynapseMiddleware.Core.Framework.MessageFormatter.ExactaMessageFormatter,Framework</Formatter>
+      <Prefix>STX</Prefix>
+      <Postfix>ETX</Postfix>
+      <StartSequence>0</StartSequence>
+      <EndSequence>4</EndSequence>
+    </MessageEnvelope>
+  </MessageEnvelopes>
+  <!--Setup Message Context here-->
+  <MessageContexts>
+    <MessageContext name="SortMessageContext" isActive="true">
+      <MessageSources>
+        <MessageSource name="SortMessageSource" threadCount="1" endPoint="RabbitMQ" messageEnvelope="SortMessageSourceEnvelope">
+          <MessageDestinations>
+            <MessageDestination name="SortMessageDestination" threadCount="1" endPoint="SortMessageDestinationEndPoint" messageEnvelope="SortMessageDestinationEnvelope" >
+              <MessageListeners>
+                <MessageListener name="SortMessageDestinationListener" endPoint="RabbitMQ" messageEnvelope="StateConfirmationMessageEnvelope" />
+              </MessageListeners>
+            </MessageDestination>
+          </MessageDestinations>
+        </MessageSource>
+      </MessageSources>
+    </MessageContext>
+    <MessageContext name="DivertConfirmationMessageContext" isActive="true">
+      <MessageSources>
+        <MessageSource name="DivertConfirmationMessageSource" threadCount="1" endPoint="DivertConfirmationMessageSourceEndPoint" messageEnvelope="DivertConfirmationMessageSourceEnvelope">
+          <MessageDestinations>
+            <MessageDestination name="DivertConfirmationMessageDestination" threadCount="1" endPoint="RabbitMQ" messageEnvelope="DivertConfirmationMessageDestinationEnvelope" >
+            </MessageDestination>
+          </MessageDestinations>
+        </MessageSource>
+      </MessageSources>
+    </MessageContext>
+  </MessageContexts>
+  <!--Setup Messages here-->
+<Messages>
+  <Message id="001" name="CTRIN" isActive="true" version="1.0" messageContext="SortMessageContext" description="Send WCS Sort message to TCP endpoint" />        
+</Messages>
+</WCSServiceContext>
+					</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Message Configuration</h2>
+					<pre>
+						<code class="xml" class="hljs"  data-trim contenteditable style="font-size: 10px;">
+<Messages>
+	<Message id="1" name="Pick" isActive="true" version="1.0" messageContext="PickContext" description="Outbound Pick Message" />
+	<Message id="2" name="Pack" isActive="true" version="1.0" messageContext="PackContext" description="Outbound Pack Message" />
+	<Message id="3" name="Ship" isActive="true" version="1.0" messageContext="ShipContext" description="Outbound Ship Message" />
+</Messages>
+						</code>
+					</pre>
+				</section>
+
+				<!-- Message Queue Configuration-->
+				<section>
+					<h2>EndPoint Configuration</h2>
+					<pre>
+						<code class="xml" class="hljs"  data-trim contenteditable style="font-size: 10px;">
+<EndPoints>
+	<EndPoint name="RabbitMQ" handler="SynapseMiddleware.Core.Framework.EndPointHandler.RabbitMqHandler,Framework" >
+	  <EndpointType>SynapseMiddleware.Core.Configuration.WcsServiceContexts.EndPoints.RabbitMqEndPoint,Configuration</EndpointType>
+	  <ConnectionString>host=localhost</ConnectionString>
+	</EndPoint>
+	<EndPoint name="SocketClient" handler="SynapseMiddleware.Core.Framework.EndPointHandler.DuplexTcpHandler,Framework">
+	  <EndpointType>SynapseMiddleware.Core.Configuration.WcsServiceContexts.EndPoints.TcpEndPoint,Configuration</EndpointType>
+	  <IpAddress>127.0.0.1</IpAddress>
+	  <Port>13000</Port>
+	  <Mode pollTimeoutInSec="1">Client</Mode>
+	  <IsHeartBeatEnabled>true</IsHeartBeatEnabled>
+	  <HeartBeatRateInSeconds>60</HeartBeatRateInSeconds>
+	  <ReceiveBufferSize>1024</ReceiveBufferSize>
+	  <MessageEncoding>ASCII</MessageEncoding>
+	</EndPoint>
+</EndPoints>
+						</code>
+					</pre>
+				</section>
+
+
+				<section>
+					<h2>Message Sequencing</h2>
+					<pre>
+						<code class="xml" class="hljs"  data-trim contenteditable style="font-size: 10px;">
+<MessageContexts>
+	<MessageContext name="PickContext" isActive="true">
+	  <MessageSources>
+		<MessageSource name="PickSource" threadCount="1" endPoint="RabbitMQ" messageEnvelope="PickEnvelope">
+		  <MessageDestinations>
+			<MessageDestination name="PickDestination" threadCount="1" endPoint="SocketClient" messageEnvelope="PickEnvelope" >
+			  <MessageListeners>
+				<MessageListener name="PickCompleteDestination" endPoint="RabbitMQ" messageEnvelope="PickCompleteEnvelope" />
+			  </MessageListeners>
+			</MessageDestination>
+		  </MessageDestinations>
+		</MessageSource>
+	  </MessageSources>
+	</MessageContext>
+	<MessageContext name="PackContext" isActive="true">
+	  <MessageSources>
+		<MessageSource name="PackSource" threadCount="1" endPoint="RabbitMQ" messageEnvelope="PickCompleteEnvelope">
+		  <MessageDestinations>
+			<MessageDestination name="PackDestination" threadCount="1" endPoint="SocketClient" messageEnvelope="PackEnvelope">
+			  <MessageListeners>
+				<MessageListener name="PackCompleteDestination" endPoint="RabbitMQ" messageEnvelope="PackCompleteEnvelope" />
+			  </MessageListeners>
+			</MessageDestination>
+		  </MessageDestinations>
+		</MessageSource>
+	  </MessageSources>
+	</MessageContext>
+	<MessageContext name="ShipContext" isActive="true">
+	  <MessageSources>
+		<MessageSource name="ShipSource" threadCount="1" endPoint="RabbitMQ" messageEnvelope="PackCompleteEnvelope">
+		  <MessageDestinations>
+			<MessageDestination name="ShipDestination" threadCount="1" endPoint="SocketClient" messageEnvelope="ShipEnvelope" />
+		  </MessageDestinations>
+		</MessageSource>
+	  </MessageSources>
+	</MessageContext>
+</MessageContexts>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>Project Status</h2>
+					<ol>
+						<li class="fragment fade-right">YETI <em>{In Production}</em></li>
+						<li class="fragment fade-right">PackSize <em>{Requirements}</em></li>
+						<li class="fragment fade-right">Target <em>{Requirements}</em></li>
+						<li class="fragment fade-right">Nutrisystem <em>{Requirements}</em></li>
+					</ol>
+				</section>
+				<section>
+					<h2>What is next?</h2>
+					<ol>
+						<li class="fragment fade-right">Host Integrations</em>
+							<ul>
+								<li class="fragment fade-right">RedPrairie LMS Messages</li>
+								<li class="fragment fade-right">Synapse Label Refactoring - Gen 2</li>
+							</ul>
+						</li>
+						<li class="fragment fade-right">Solution Enhancements</em>
+							<ul>
+								<li class="fragment fade-right">Administration Web Console.</li>
+								<li class="fragment fade-right">Alerts, Error Message Archieve and Tracking.</li>
+							</ul>
+						</li>
+					</ol>
+				</section>
+<!--
+
+
+				<section>
+					<h2>Message Queue - End Point Configuration.</h2>
+					<pre>
+						<code class="hljs" data-trim contenteditable>
+						</code>
+					</pre>
+				</section>
+
+
+
+				<section>
+					<section data-background="#dddddd">
+						<h2>Slide Backgrounds</h2>
+						<p>
+							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+						</p>
+						<a href="#" class="navigate-down">
+							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+						<h2>Image Backgrounds</h2>
+						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+					</section>
+					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+						<h2>Tiled Backgrounds</h2>
+						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					</section>
+					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>Video Backgrounds</h2>
+							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						</div>
+					</section>
+					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+						<h2>... and GIFs!</h2>
+					</section>
+				</section>
+
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+					</p>
+					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+				</section>
+
+				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+					<h2>Background Transitions</h2>
+					<p>
+						You can override background transitions per-slide.
+					</p>
+					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+				</section>
+
+
+				<section>
+					<h2>Marvelous List</h2>
+					<ul>
+						<li>No order here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+						<li>Or here</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Fantastic Ordered List</h2>
+					<ol>
+						<li>One is smaller than...</li>
+						<li>Two is smaller than...</li>
+						<li>Three!</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Tabular Tables</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Item</th>
+								<th>Value</th>
+								<th>Quantity</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Apples</td>
+								<td>$1</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>Lemonade</td>
+								<td>$2</td>
+								<td>18</td>
+							</tr>
+							<tr>
+								<td>Bread</td>
+								<td>$3</td>
+								<td>2</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+-->
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				menu: {
+					side: 'right',
+					numbers: false,
+					titleSelector: 'h1, h2, h3, h4, h5, h6',
+					hideMissingTitles: false,
+					markers: false,
+					custom: false,
+					themes: [
+			            { name: 'Black', theme: 'css/theme/black.css' },
+			            { name: 'White', theme: 'css/theme/white.css' },
+			            { name: 'League', theme: 'css/theme/league.css' },
+			            { name: 'Sky', theme: 'css/theme/sky.css' },
+			            { name: 'Beige', theme: 'css/theme/beige.css' },
+			            { name: 'Simple', theme: 'css/theme/simple.css' },
+			            { name: 'Serif', theme: 'css/theme/serif.css' },
+			            { name: 'Blood', theme: 'css/theme/blood.css' },
+			            { name: 'Night', theme: 'css/theme/night.css' },
+			            { name: 'Moon', theme: 'css/theme/moon.css' },
+			            { name: 'Solarized', theme: 'css/theme/solarized.css' }
+        			],
+        			transitions: true,
+        			openButton: true,
+        			openSlideNumber: true,
+        			keyboard: true
+				},
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/menu/menu.js'}
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

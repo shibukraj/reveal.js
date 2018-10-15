@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>New RF Platform – Scalable and Distributed Platform for Synapse RF Integration.</title>
+		<meta name="description" content="Modern platform for integration RF devices to Synapse WMS.">
+		<meta name="author" content="Shibu K. Raj">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-menu-title="Overview">
+					<h2>New RF</h2>
+					<h4>Scalable, resiliant and distributed architecture for RF Device integration with Synapse WMS.</h4>
+					<p>
+						<small>Developed by <a href="www.ohl.com">CL Application Development Team</a> </small>
+					</p>
+				</section>
+
+				<section id="themes" data-menu-title="Accessibility">
+					<h2>Accessibility</h2>
+					<p>
+						Select the theme that suit your environment: <br>
+						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized (default)</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a></br>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a>
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
+						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a>
+					</p>
+				</section>
+
+				<section id="vision-1" data-menu-title="Vision - Current RF Platform" >
+					<h4>Current Architecture<h4>
+					<img width="1366" height="480" data-src="img/rf/current.png" alt="Current Architecture">
+				</section>
+
+				<section id="vision-2" data-menu-title="Vision - New Platform">
+					<h4>Architecture (Proposed)</h4>
+					<img width="800" height="600" data-src="img/rf/3-teir-model.jpg" alt="Proposed Architecture">
+				</section>
+				
+				<section id="vision-2.1" data-menu-title="Vision - New Platform">
+					<h4>Sub System Topology (Proposed)</h4>
+					<img width="800" height="600" data-src="img/rf/synapse-rf-present.png" alt="Sub System Topology">
+				</section>
+
+				<section id="technology-1.1" data-menu-title="Technology - New Platform -1">
+					<h4>Future Technology Stack</h4>
+					<img width="800" height="600" data-src="img/rf/nodejs_logo_green.jpg" alt="Technology - New Platform -1">
+				</section>
+
+				<section id="technology-1.2" data-menu-title="Technology - New Platform -2">
+					<h4>Why Node.JS?</h4>
+					<img width="800" height="600" data-src="img/rf/Nodejs-when-and-where.png" alt="Technology - New Platform -2">
+				</section>
+
+				<section id="technology-1.3" data-menu-title="Technology - New Platform -3">
+					<h4>Node.Js Architecture</h4>
+					<img width="800" height="600" data-src="img/rf/nodejs-arch.jpg" alt="Technology - New Platform">
+				</section>
+
+				<section id="technology-1.4" data-menu-title="Technology - New Platform -4">
+					<h4>Node.Js Internals</h4>
+					<img width="800" height="600" data-src="img/rf/nodejs-server.png" alt="Technology - New Platform">
+				</section>
+
+				<section id="Nodejs-lib-1" data-menu-title="Application Development Library" >
+					<h3>Node.js Frameworks and Libraries.</h3>					
+					<ol>
+						<li class="fragment fade-right"><a href="https://github.com/chjj/blessed">Blessed</a>  - A high-level terminal interface library.</li>
+						<li class="fragment fade-right"><a href="https://github.com/chjj/node-telnet2">node-telnet2</a> - Telnet Server Implementation.</li>						
+					</ol>
+				</section>
+
+				<section id="middle-teir-lib-1" data-menu-title="Application Server Layer" >
+					<h3>Middle Teir - Frameworks and Libraries.</h3>
+					<ol>
+						<li class="fragment fade-right"> <a href="https://www.microsoft.com/net/">.NET Core</a> - Cross platform framework for server apps.</li>
+						<li class="fragment fade-right"> <a href="http://www.asp.net/core">ASP.NET Core</a> - Cross platform library for Restful Services.</li>
+					</ol>
+				</section>
+
+
+				<section id="why-1" data-menu-title="Why these frameworks?" >
+					<h4>Why these frameworks & libs?</h4>
+					<ol>
+						<li class="fragment fade-right">Cloud Friendly - especially <a href="https://azure.microsoft.com/en-us/">Microsoft Azure</a></li>
+						<li class="fragment fade-right">Maximization of OHL & local talent pool.</li>
+						<li class="fragment fade-right">Test driven development friendly.</li>
+					</ol>
+				</section>
+
+				<section id="gameplan-1" data-menu-title="Game Plan">					
+					<img width="800" height="600" data-src="img/common/gameplan.jpg" alt="Technology - New Platform">
+				</section>
+
+
+				<section id="plan-1.1" data-menu-title="Plan and Approach" >
+					<h4>Plan and Approach</h4>
+					<ol>
+						<li class="fragment fade-right">Technology Prototype - {Complete}</li>
+						<li class="fragment fade-right">Analysis - Current application. {Ongoing. 4 use cases completed.}</li>
+						<li class="fragment fade-right">Design, Development & Testing- {Started application framework.}</li>
+					</ol>
+				</section>
+
+
+				<section id="impl-1.1" data-menu-title="Implementation Approach -1" >
+					<h4>Implementation Approach -  Data Access</h4>
+					<ol>
+						<li class="fragment fade-right">New Schema
+							<ul>
+								<li class="fragment highlight-red">All DB Objects will stay under this schema.</li>
+								<li class="fragment highlight-red">Stored procedures, Prepared Statements etc.</li>								
+							</ul>
+						</li>						
+					</ol>
+				</section>
+
+				<section id="impl-1.2" data-menu-title="Implementation Approach -2" >
+					<h4>Implementation Approach -  Data Access</h4>
+					<ol>
+						<li class="fragment fade-right">Reuse vs Recreate
+							<ul>
+								<li class="fragment highlight-red">It depends. Not 100% nor 50-50</li>
+								<li class="fragment highlight-red">Evaluate by each RF option</li>								
+								<li class="fragment highlight-red">Will recreate 100% logic in pro*C files and modules</li>	
+								<li class="fragment highlight-red">Most of zrf.* packages will be reused.</li>							
+							</ul>
+						</li>						
+					</ol>
+				</section>
+
+				<section id="demo-stage" data-menu-title="Demo">					
+					<img width="800" height="600" data-src="img/common/Demo.png" alt="Demo">
+				</section>				
+
+				<section id="demo-prototype" data-menu-title="Prototype - Demo">
+					<h4>Node.Js Architecture</h4>
+					<img width="800" height="600" data-src="img/rf/RF-Demo.gif" alt="Demo">
+				</section>
+
+				
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				menu: {
+					side: 'right',
+					numbers: false,
+					titleSelector: 'h1, h2, h3, h4, h5, h6',
+					hideMissingTitles: false,
+					markers: false,
+					custom: false,
+					themes: [
+			            { name: 'Black', theme: 'css/theme/black.css' },
+			            { name: 'White', theme: 'css/theme/white.css' },
+			            { name: 'League', theme: 'css/theme/league.css' },
+			            { name: 'Sky', theme: 'css/theme/sky.css' },
+			            { name: 'Beige', theme: 'css/theme/beige.css' },
+			            { name: 'Simple', theme: 'css/theme/simple.css' },
+			            { name: 'Serif', theme: 'css/theme/serif.css' },
+			            { name: 'Blood', theme: 'css/theme/blood.css' },
+			            { name: 'Night', theme: 'css/theme/night.css' },
+			            { name: 'Moon', theme: 'css/theme/moon.css' },
+			            { name: 'Solarized', theme: 'css/theme/solarized.css' }
+        			],
+        			transitions: true,
+        			openButton: true,
+        			openSlideNumber: true,
+        			keyboard: true
+				},
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/menu/menu.js'}
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

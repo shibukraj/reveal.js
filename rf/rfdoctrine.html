@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>New RF Platform – Development Doctrine.</title>
+	<meta name="description" content="A guide for modern day practioners.">
+	<meta name="author" content="Shibu K. Raj">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="../css/reveal.css">
+	<link rel="stylesheet" href="../css/theme/white.css" id="theme">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+</head>
+
+<body>
+
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section data-menu-title="doctrine">
+				<h3>RF Platform-Development Doctrine.</h3>
+				<h5>A guide for modern day technology paractioners & innovators.</h4>
+					<p>
+						<small>
+							<a href="www.geodis.com" style="color: #0000CD">CL Application Development Team</a>
+						</small>
+					</p>
+					<aside class="notes">
+
+						They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+			</section>
+
+			<section id="themes" data-menu-title="Themes">
+				<h3>Accessibility</h3>
+				<p>
+					Select the theme that suit your environment:
+					<br>
+					<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/white.css'); return false;" style="color: #0000CD">White (default)</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/solarized.css'); return false;" style="color: #0000CD">Solarized</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/black.css'); return false;" style="color: #0000CD">Black</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/league.css'); return false;" style="color: #0000CD">League</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/sky.css'); return false;" style="color: #0000CD">Sky</a>
+					</br>
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/beige.css'); return false;" style="color: #0000CD">Beige</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/simple.css'); return false;" style="color: #0000CD">Simple</a>
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/serif.css'); return false;" style="color: #0000CD">Serif</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/blood.css'); return false;" style="color: #0000CD">Blood</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/night.css'); return false;" style="color: #0000CD">Night</a> -
+					<a href="#" onclick="document.getElementById('theme').setAttribute('href','../css/theme/moon.css'); return false;" style="color: #0000CD">Moon</a>
+				</p>
+			</section>
+
+			<section id="Quick-exercise" data-menu-title="Exercise">
+				<h3>Exercise - How we did it?</h3>
+				<ol>
+					<li class="fragment fade-right">Need for change?</li>
+					<li class="fragment fade-right">Strategy for change?</li>
+					<li class="fragment fade-right">Change Execution.</li>
+					<li class="fragment fade-right">Style of Execution.</li>
+					<li class="fragment fade-right">Change - a sucess or failure?</li>
+					<li class="fragment fade-right">Benefits of change?</li>
+				</ol>
+
+				<aside class="notes">
+					<li>Need - Do we need it?Are we late? Will we be sucessful without change?</li>
+					<li>Strategy - Do we have the right strategy? Too much in less time? Not aggressive? </li>
+					<li>Execution - How we did it? What should have done better?</li>
+					<li>Style - Feelings hurt?</li>
+					<li>Sucess - What is sucess look like? Are we there it? What needs to be done to get there?</li>
+					<li>Benefits - Is there any benefits? What are the benefits?</li>
+				</aside>
+
+			</section>
+			<section id="fragments-why" data-menu-title="Why doctrines?">
+				<h3>Why doctrines? </h3>
+				<ol>
+					<li class="fragment fade-right">Novel technological advantages erode over time.</li>
+					<li class="fragment fade-right">Timing & Training alone cannot sustain technology movements over longer term.</li>
+					<li class="fragment fade-right">Cultivate a culture of sustainability for technology accomplishments. </li>
+					<li class="fragment fade-right">Cultivate a culture of change for continued improvement of technology accomplishments. </li>
+				</ol>
+
+				<aside class="notes">
+					<li>Help us to continue to stay relevant and true to the technological accomplishments.</li>
+					<li>Allows us to mix in various thoughs of programming and nature of programmers.</li>
+					<li>Allows us to cultivate a culture of change.</li>
+					<li>Establish and maintain a process of change valued under a common set of principles.</li>
+					<li>Disagreements, dialects and diversity of thought are needed for sustainability.</li>
+				</aside>
+
+			</section>
+
+			<section id="fragments-pillars" data-menu-title="Pillars of Development Doctrine">
+				<h3>Eight pillars</h3>
+				<ol>
+					<li class="fragment fade-right">Culture of simplicity & sustainability (SaS).</li>
+					<li class="fragment fade-right">Optimize for developer happiness.</li>
+					<li class="fragment fade-right">Convention over configuration (CoC).</li>
+					<li class="fragment fade-right">Ideological flexibility over purity (FoP).</li>
+					<li class="fragment fade-right">Progress over stability (PoS).</li>
+					<li class="fragment fade-right">Value focus over technology focus (VoT).</li>
+					<li class="fragment fade-right">Facts over feelings (FoF).</li>
+					<li class="fragment fade-right">Idealize over Idolize (IoI).</li>
+				</ol>
+
+				<aside class="notes">
+
+					<li>Simplicity & sustainability
+						<ol>
+							<li>Will guide us through the need of being nible, simple and understandable.</li>
+							<li>Allows us to mature the process through simple steps.</li>
+						</ol>
+					</li>
+					<li>Optimize for developer happiness.
+						<ol>
+							<li>Look through the eyes of developer.</li>
+						</ol>
+					</li>
+					<li>Convention Over configuration
+						<ol>
+							<li>Discuss the conventions lead to a common understanding</li>
+							<li>Shared understanding and implicit contracts for dependencies.</li>
+						</ol>
+					</li>
+					<li>Ideological flexibility over purity
+						<ol>
+							<li>Think from the prespective of solution rather than tools.</li>
+							<li>Pick the right tool for the job.</li>
+							<li>Bring in the new ideas from other areas to create a cohesive solution.</li>
+							<li>Push us to think from different prespectives.</li>
+						</ol>
+					</li>
+					<li>Progress over stability
+						<ol>
+							<li>Natural tendency for ossification.</li>
+							<li>Past behaviors will be an issue for someone.</li>
+							<li>Progress is measured by our ability and willingsness to push the change.</li>
+						</ol>
+					</li>
+					<li>Value focus over technology focus.
+						<ol>
+							<li>Glorious majestic monolith over simple distributed systems.</li>
+							<li>Use technology to create value oriented simple systems.</li>
+							<li>Polygot technology elements based on value.</li>
+						</ol>
+					</li>
+					<li>Facts over feelings
+						<ol>
+							<li>Identify facts vs opinions.</li>
+							<li>Access opinions based on value creation ability.</li>
+							<li>Mesaure advancements (value & technology) in quantitative terms.</li>
+						</ol>
+					</li>
+					<li>Idealize over Idolize
+						<ol>
+							<li>Idealize - Regard or represent as perfect or better than in reality.</li>
+							<li>Idolize - Admire, revere, or love greatly or excessively.</li>
+							<li>Ideals - help us grow; Idols - hinder growth & encourage subordination.</li>
+							<li>Ideals - improve quality; Idols - improve ego.</li>
+						</ol>
+					</li>
+				</aside>
+			</section>
+
+			<section id="fragments-pillar-start" data-menu-title="Start">
+				<blockquote>
+					&ldquo;That's been one of my mantras - focus and simplicity. Simple can be harder than complex: You have to work hard to
+					get your thinking clean to make it simple. But it's worth it in the end because once you get there, you can move mountains.&rdquo;
+					<br> ~ Steve Jobs
+				</blockquote>
+			</section>
+
+			<section id="fragments-pillar-1" data-menu-title="Pillar-1">
+				<h3>Culture of simplicity & sustainability (SoS)</h3>
+				<ol>
+					<li class="fragment fade-right">Scalable design - excellent theory, difficult to practice.</li>
+					<li class="fragment fade-right">Release & Update often.</li>
+					<li class="fragment fade-right">Code towards logical & cyclomatic simplicity</li>
+					<li class="fragment fade-right">Code has cost. Justify it.</li>
+				</ol>
+			</section>
+
+			<section id="fragments-pillar-1.1" data-menu-title="Pillar-1-cont.">
+				<h3>Culture of simplicity & sustainability (SoS) - Cont.</h3>
+				<li class="fragment fade-right">Characteristics of Unsustainable environment
+					<ol>
+						<li class="fragment fade-right">Primarily Reactive.</li>
+						<li class="fragment fade-right">Code first, fix defects later.</li>
+						<li class="fragment fade-right">Death Spiral</li>
+					</ol>
+				</li>
+				<li class="fragment fade-right">Characteristics of Sustainable environment
+					<ol>
+						<li class="fragment fade-right">Proactive - high quality, reliability & continous improvement.</li>
+						<li class="fragment fade-right">Value Creation - Continous improvement & Efficiency</li>
+						<li class="fragment fade-right">Virtuous Cycle
+							<ol>
+								<li class="fragment fade-right">Higher Team morale</li>
+								<li class="fragment fade-right">Ability to deal with Increasing complexity & change.</li>
+								<li class="fragment fade-right">Balance in needs - Long & Short term.</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<aside class="notes">
+					<li>For further reading: http://catalogue.pearsoned.co.uk/samplechapter/0321286081.pdf</li>
+				</aside>
+
+			</section>
+
+			<section id="fragments-pillar-happy" data-menu-title="Developer Happiness">
+				<h3>Optimize for developer happiness.</h3>
+				<ol>
+					<li class="fragment fade-right">Exalt beautiful code.</li>
+					<li class="fragment fade-right">Optimize for developer happiness.</li>
+					<li class="fragment fade-right">Improve logical & cyclomatic simplicity</li>
+					<li class="fragment fade-right">Code with/has shared purpose, creativity & freedom.</li>
+					<li class="fragment fade-right">Code is meant to be shared.</li>
+					<blockquote class="fragment fade-right">
+						&ldquo;No man should have to clean up after another man’s dog.&rdquo;
+						<br> ~ Gerald R. Ford
+					</blockquote>
+				</ol>
+
+				<aside class="notes">
+					<li>Cherish and enjoy the beauty of code.</li>
+					<li>Optimize for developer and not for computer in terms of code.</li>
+					<li>Cherish happy peers. They are part of your family.</li>
+					<li>It is an recurring expsene. Use it only when needed and judisiously.</li>
+					<li>Once production - every day , every minute, every second we need to pay for it.</li>
+					<li>Small & Simple to understand code - is a beauty in intself.</li>
+					<li>Complexity should be reduced to the minimum at all costs.</li>
+					<li>What is the purpose of the code? What you think of it when you are developing this code</li>
+					<li>Is it just part of the job? What is the purpose?</li>
+
+				</aside>
+			</section>
+
+			<section id="fragments-pillar-2" data-menu-title="Pillar - 2">
+				<h3>Convention over configuration (CoC).</h3>
+				<ol>
+					<li class="fragment fade-right">Avoid unworthy recurrent deliberations & make progress in areas that really matter.</li>
+					<li class="fragment fade-right">Good conventions pay dividents across wide spectrum.
+						<ol>
+							<li class="fragment fade-right">Lowers the barriers of entry.</li>
+							<li class="fragment fade-right">Each part is same or very similar to other areas that went before.</li>
+							<li class="fragment fade-right">A place for everything & everything in its place.</li>
+						</ol>
+					</li>
+					<li class="fragment fade-right">Constraints liberate the most able minds.</li>
+				</ol>
+			</section>
+
+			<section id="fragments-pillar-3" data-menu-title="Pillar - 3">
+				<h3>Ideological flexibility over purity (FoP).</h3>
+				<ol>
+					<li class="fragment fade-right">Composite of many Ideological choices and paradigms.</li>
+					<li class="fragment fade-right">Not a championship where superior idea is declared a winner.</li>
+					<li class="fragment fade-right">Together - Stronger and more capable.</li>
+					<li class="fragment fade-right">Deversity in people, paradigms & thoughts.</li>
+					<li class="fragment fade-right">Accept complex journey of learning as a joy, not an obstacle.</li>
+				</ol>
+
+				<aside class="notes">
+					<li>Encourage anyone in the minority group to speak up early to give them a chance to influence the direction of the conversation
+						before a cascade sets in.
+					</li>
+					<li>When one person goes against the majority, the likelyhood that others will offer divergent prespectives increases greatly.
+						Take advantage of this phenomenon to promote healthy dissent.
+					</li>
+				</aside>
+			</section>
+
+			<section id="fragments-pillar-4" data-menu-title="Pillar - 4">
+				<h3>Progress over stability (PoS).</h3>
+				<ol>
+					<li class="fragment fade-right">Systems has natural tendency for ossification.</li>
+					<li class="fragment fade-right">Evolution will help survival and prosperity in the future.</li>
+					<li class="fragment fade-right">Progress is about people and willingsness to push change.
+						<ol>
+							<li class="fragment fade-right">There are no lifetime seats.</li>
+							<li class="fragment fade-right">Acquire strength to debug the busted, figure it out, and move with the times.</li>
+						</ol>
+					</li>
+					<li class="fragment fade-right">Welcome and encourage new ideas (not ossified old ideas). Need fresh blood and fresh ideas to make better progress.</li>
+
+
+				</ol>
+			</section>
+
+			<section id="fragments-pillar-5" data-menu-title="Pillar -5">
+				<h3>Value focus over technology focus (VoT).</h3>
+				<ol>
+					<li class="fragment fade-right">Value minded choices over technology.</li>
+					<li class="fragment fade-right">Sustainable value. Grow with the change.</li>
+					<li class="fragment fade-right">Glorious Majestic Monolith over Simple distributed systems.</li>
+					<li class="fragment fade-right">Polygot technology choices based on value creation, simplicity & sustainability.</li>
+				</ol>
+			</section>
+
+			<section id="fragments-pillar-6" data-menu-title="Pillar - 6">
+				<h3>Facts over feelings (FoF)</h3>
+				<ol>
+					<li class="fragment fade-right">Identify facts vs opinions.</li>
+					<li class="fragment fade-right">Deliberate opinions based on value creation & sustainability.</li>
+					<li class="fragment fade-right">Quantitative measurements vs Qualitative.</li>
+					<li class="fragment fade-right">Quantify
+						<ol>
+							<li>Ability to change</li>
+							<li>Sustainability - growth & technology </li>
+							<li>Value creation.</li>
+						</ol>
+					</li>
+					<blockquote class="fragment fade-right">
+						&ldquo;Too often we . . . enjoy the comfort of opinion without the discomfort of thought.&rdquo;
+						<br> ~ John F Kennedy
+					</blockquote>
+				</ol>
+			</section>
+			<section id="fragments-pillar-7" data-menu-title="Pillar - 7">
+				<h3>Idealize over Idolize (IoI)</h3>
+				<ol>
+					<li class="fragment fade-right">Idealize - thoughts, ideas & paradigms.</li>
+					<li class="fragment fade-right">Never idolize - thoughts, opinions ...</li>
+					<li class="fragment fade-right">Ready to change the ideals.</li>
+					<li class="fragment fade-right">Deliberate and look for counter points.</li>
+					<li class="fragment fade-right">Welcome diversity</li>
+					<blockquote class="fragment fade-right">
+						&ldquo;Everyone should be respected as an individual, but no one idolized.&rdquo;
+						<br> ~ Albert Einstein
+					</blockquote>
+				</ol>
+			</section>
+
+			<section id="fragments-pillar-end" data-menu-title="The end">
+				<blockquote class="fragment fade-right">
+					&ldquo;Every great dream begins with a dreamer. Always remember, you have within you the strength, 
+					the patience, and the passion to reach for the stars to change the world.&rdquo;
+					<br> ~ Harriet Tubman
+				</blockquote>
+			</ol>
+			</section>
+		</div>
+	</div>
+
+	<script src="../lib/js/head.min.js"></script>
+	<script src="../js/reveal.js"></script>
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [{
+					src: '../lib/js/classList.js',
+					condition: function () {
+						return !document.body.classList;
+					}
+				},
+				{
+					src: '../plugin/markdown/marked.js',
+					condition: function () {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: '../plugin/markdown/markdown.js',
+					condition: function () {
+						return !!document.querySelector('[data-markdown]');
+					}
+				},
+				{
+					src: '../plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				},
+				{
+					src: '../plugin/zoom-js/zoom.js',
+					async: true
+				},
+				{
+					src: '../plugin/notes/notes.js',
+					async: true
+				}
+			]
+		});
+	</script>
+	<style>
+		.reveal li {
+			font-size: 0.9em !important;
+			font-family: 'Architects Daughter', cursive;
+		}
+
+		.reveal h3 {
+			font-family: 'Special Elite', cursive;
+			color: #080808 !important;
+		}
+
+		.reveal blockquote {
+			font-family: 'Gloria Hallelujah', cursive !important;
+			font-size: 0.9em !important;
+		}
+	</style>
+</body>
+
+<!-- 
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Barlow Condensed', sans-serif;
+font-family: 'Slabo 27px', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'PT Sans', sans-serif;
+font-family: 'Merriweather', serif;
+font-family: 'Lora', serif;
+font-family: 'Indie Flower', cursive;
+font-family: 'Noto Serif', serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Old Standard TT', serif;
+font-family: 'Heebo', sans-serif;
+font-family: 'Quattrocento', serif;
+font-family: 'Tinos', serif;
+font-family: 'Special Elite', cursive;
+
+
+Display
+
+font-family: 'Patua One', cursive;
+font-family: 'Comfortaa', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Nixie One', cursive;
+font-family: 'Chelsea Market', cursive;
+font-family: 'Happy Monkey', cursive;
+font-family: 'Corben', cursive;
+font-family: 'Atma', cursive;
+
+
+Handwriting
+
+font-family: 'Architects Daughter', cursive;
+
+font-family: 'Patua One', cursive;
+font-family: 'Comfortaa', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Nixie One', cursive;
+font-family: 'Chelsea Market', cursive;
+font-family: 'Happy Monkey', cursive;
+font-family: 'Corben', cursive;
+font-family: 'Atma', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Architects Daughter', cursive;
+font-family: 'Shadows Into Light Two', cursive;
+font-family: 'Gochi Hand', cursive;
+font-family: 'Neucha', cursive;
+font-family: 'Annie Use Your Telescope', cursive;
+font-family: 'Schoolbell', cursive;
+font-family: 'The Girl Next Door', cursive;
+font-family: 'Walter Turncoat', cursive;
+font-family: 'Crafty Girls', cursive;
+font-family: 'Kalam', cursive;
+font-family: 'Caveat', cursive;
+font-family: 'Handlee', cursive;
+font-family: 'Coming Soon', cursive;
+font-family: 'Just Me Again Down Here', cursive;
+
+font-family: 'Patua One', cursive;
+font-family: 'Comfortaa', cursive;
+font-family: 'Special Elite', cursive;
+font-family: 'Nixie One', cursive;
+font-family: 'Chelsea Market', cursive;
+font-family: 'Happy Monkey', cursive;
+font-family: 'Corben', cursive;
+font-family: 'Atma', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Architects Daughter', cursive;
+font-family: 'Shadows Into Light Two', cursive;
+font-family: 'Gochi Hand', cursive;
+font-family: 'Neucha', cursive;
+font-family: 'Annie Use Your Telescope', cursive;
+font-family: 'Itim', cursive;
+font-family: 'Schoolbell', cursive;
+font-family: 'The Girl Next Door', cursive;
+font-family: 'Short Stack', cursive;
+font-family: 'Walter Turncoat', cursive;
+font-family: 'Crafty Girls', cursive;
+font-family: 'Swanky and Moo Moo', cursive;
+
+-->
+
+</html>
